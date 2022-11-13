@@ -18,9 +18,9 @@ M             1000
         public int romanToInt(String s) {
             int summary = 0;
             if (s.length() > 15 && s.length() < 1){
-                return summary;
+                System.out.println("String must be less than 15 char and higher than 1");
+                System.exit(0);
             }
-
             for (int i = 0; i < s.length(); i++) {
                 char letter = s.charAt(i);
                 switch (letter){
