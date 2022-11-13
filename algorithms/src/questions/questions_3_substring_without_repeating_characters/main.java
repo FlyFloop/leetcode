@@ -5,7 +5,7 @@ import java.util.*;
 public class main {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.lengthOfLongestSubstring("oplakayua"));
+        System.out.println(solution.lengthOfLongestSubstring("abcabcbb"));
     }
     /*
     Input: s = "abcabcbb"
