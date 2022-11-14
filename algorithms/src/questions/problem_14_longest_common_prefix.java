@@ -6,7 +6,7 @@ import java.util.Collections;
 public class problem_14_longest_common_prefix {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.longestCommonPrefix(new String[]{"flower","flow","flight"}));
+        System.out.println(solution.longestCommonPrefix(new String[]{"FsLower","FaLow","FLight"}));
     }
     /*
     Input: strs = ["flower","flow","flight"]
@@ -18,7 +18,14 @@ Output: "fl"
             int firstArrayIndex = 0;
             int maxIndex = strs[0].length();
             ArrayList<Integer> counts = new ArrayList<Integer>();
+            if (!(strs.length <= 200 && strs.length >= 1)){
+                return "";
+            }
+
             for (int i = 0; i < strs.length; i++) {
+                if (!(strs[i].length() <= 200 && strs[i].length() >= 1)){
+                    return "";
+                }
                 if (maxIndex > strs[i].length()){
                     maxIndex = strs[i].length() - 1;
                 }
@@ -29,8 +36,10 @@ Output: "fl"
                 }
             }
             for (int i = 1; i < strs.length; i++) {
+
+
                 for (int j = 0; j < maxIndex; j++) {
-                    if (strs[firstArrayIndex].charAt(j) == strs[i].charAt(j)){
+                    if (strs[firstArrayIndex].toLowerCase().charAt(j) == strs[i].toLowerCase().charAt(j)){
                         count+=1;
                     }
                 }
@@ -38,7 +47,7 @@ Output: "fl"
                 count = 0;
             }
             int arrayCountsIndex = Collections.min(counts);
-            String getChar = strs[0].substring(0,arrayCountsIndex);
+            String getChar = strs[0].substring(0,arrayCountsIndex).toLowerCase();
             return getChar;
         }
     }
