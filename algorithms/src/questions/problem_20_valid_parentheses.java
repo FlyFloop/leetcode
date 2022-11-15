@@ -9,7 +9,8 @@ Output: false
 public class problem_20_valid_parentheses {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.isValid("()[]{}()()()()(])"
+        System.out.println(solution.isValid("()"
+
         ));
     }
    static class Solution {
@@ -29,7 +30,6 @@ public class problem_20_valid_parentheses {
        }
    }
    static public boolean checkParentheses(Character character,Character nextCharacter){
-
        if (character == '('){
            if (nextCharacter == ')'){
                return true;

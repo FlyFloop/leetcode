@@ -6,7 +6,7 @@ import java.util.Collections;
 public class problem_14_longest_common_prefix {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.longestCommonPrefix(new String[]{"FsLower","FaLow","FLight"}));
+        System.out.println(solution.longestCommonPrefix(new String[]{"FassLower","FassLaw","FassLight"}));
     }
     /*
     Input: strs = ["flower","flow","flight"]
@@ -36,12 +36,13 @@ Output: "fl"
                 }
             }
             for (int i = 1; i < strs.length; i++) {
-
-
                 for (int j = 0; j < maxIndex; j++) {
                     if (strs[firstArrayIndex].toLowerCase().charAt(j) == strs[i].toLowerCase().charAt(j)){
                         count+=1;
+                    }else {
+                        break;
                     }
+
                 }
                 counts.add(count);
                 count = 0;
